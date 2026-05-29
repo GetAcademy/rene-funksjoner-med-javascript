@@ -1,6 +1,6 @@
 export function run() {
   console.log("╔══════════════════════════════════════════╗");
-  console.log("║  Del 3: Sideeffekt Type 2 — Mutasjon    ║");
+  console.log("║  Del 3: Sideeffekt Type 2 — Mutasjon     ║");
   console.log("╚══════════════════════════════════════════╝\n");
 
   // --- 3A: Global mutasjon ---

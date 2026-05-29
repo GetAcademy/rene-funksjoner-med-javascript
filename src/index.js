@@ -15,14 +15,15 @@ async function menu() {
   while (true) {
     console.clear();
     console.log("╔══════════════════════════════════════════╗");
-    console.log("║  Rene funksjoner — Worklog              ║");
+    console.log("║  Rene funksjoner — Worklog               ║");
     console.log("╚══════════════════════════════════════════╝\n");
     console.log("  0  — Alle deler");
     console.log("  1  — Uren processOrder (test-problemet)");
     console.log("  2  — Sideeffekt Type 1: IO");
     console.log("  3  — Sideeffekt Type 2: Mutasjon");
-    console.log("  4  — Hvorfor rene funksjoner");
-    console.log("  5  — Refaktorert: ren processOrder + test");
+    console.log("  4  — Kopier data (nye arrays/objekter)");
+    console.log("  5  — Hvorfor rene funksjoner");
+    console.log("  6  — Refaktorert: ren processOrder + test");
     console.log("  q  — Avslutt");
     console.log();
 
@@ -36,13 +37,15 @@ async function menu() {
         const { run: run01 } = await import("./01-impure-order.js");
         const { run: run02 } = await import("./02-side-effect-io.js");
         const { run: run03 } = await import("./03-side-effect-mutation.js");
-        const { run: run04 } = await import("./04-why-pure.js");
-        const { run: run05 } = await import("./05-pure-order.js");
+        const { run: run04 } = await import("./04-copy-data.js");
+        const { run: run05 } = await import("./05-why-pure.js");
+        const { run: run06 } = await import("./06-pure-order.js");
         run01();
         run02();
         run03();
         run04();
         run05();
+        run06();
         break;
       }
       case "1": {
@@ -61,12 +64,17 @@ async function menu() {
         break;
       }
       case "4": {
-        const { run } = await import("./04-why-pure.js");
+        const { run } = await import("./04-copy-data.js");
         run();
         break;
       }
       case "5": {
-        const { run } = await import("./05-pure-order.js");
+        const { run } = await import("./05-why-pure.js");
+        run();
+        break;
+      }
+      case "6": {
+        const { run } = await import("./06-pure-order.js");
         run();
         break;
       }

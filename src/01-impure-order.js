@@ -1,13 +1,13 @@
 export function run() {
   console.log("╔══════════════════════════════════════════╗");
-  console.log("║  Del 1: Uren processOrder               ║");
+  console.log("║  Del 1: Uren processOrder                ║");
   console.log("╚══════════════════════════════════════════╝\n");
 
   // --- Uren processOrder ---
   let taxRate = 0.25;
 
   function processOrder(order) {
-    taxRate = 0.20;
+    taxRate = 0.2;
     console.log("  Processing order...");
     for (let i = 0; i < order.items.length; i++) {
       order.items[i].price *= 1 + taxRate;

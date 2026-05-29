@@ -56,7 +56,7 @@ Tre grunner:
 ## Setup
 
 ```bash
-cd ~/Projects/GET/csharp-fp-worklog
+cd ~/Projects/GET/rene-funksjoner-med-javascript
 node src/index.js
 ```
 
@@ -216,6 +216,61 @@ function addVat(prices, vat) {
 ```
 
 ✅ `original` er fortsatt `[100, 200, 300]`
+
+---
+
+# Kopier data — ikke muter
+
+Løsningen på referansemutasjon: lag **nye** arrays og objekter.
+
+---
+
+## Spread operator for arrays
+
+```javascript
+const original = [1, 2, 3];
+const copy = [...original, 4];      // [1, 2, 3, 4]
+const without = original.slice(1);  // [2, 3]
+```
+
+`original` er fortsatt `[1, 2, 3]` — alltid.
+
+---
+
+## Spread operator for objekter
+
+```javascript
+const user = { name: "Alice", age: 30 };
+const updated = { ...user, age: 31 };
+// updated → { name: "Alice", age: 31 }
+// user   → { name: "Alice", age: 30 }  ✅ urørt
+```
+
+---
+
+## Map / Filter — transformasjon uten mutasjon
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map(n => n * 2);      // [2, 4, 6, 8, 10]
+const even = numbers.filter(n => n % 2 === 0); // [2, 4]
+```
+
+`numbers` er fortsatt `[1, 2, 3, 4, 5]` — alltid tilgjengelig.
+
+---
+
+## Hvorfor dette er viktig
+
+| Mutasjon | Kopiering |
+|:---|---:|
+| `prices[i] *= 1.25` | `prices.map(p => p * 1.25)` |
+| `user.age = 31` | `{ ...user, age: 31 }` |
+| `list.push(4)` | `[...list, 4]` |
+| **Originalen forsvinner** | **Originalen er urørt** |
+
+> `...spread`, `.map()`, `.filter()` — tre verktøy som eliminerer mutasjon.
 
 ---
 

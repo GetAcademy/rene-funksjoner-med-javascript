@@ -1,6 +1,6 @@
 export function run() {
   console.log("╔══════════════════════════════════════════╗");
-  console.log("║  Del 2: Sideeffekt Type 1 — IO          ║");
+  console.log("║  Del 2: Sideeffekt Type 1 — IO           ║");
   console.log("╚══════════════════════════════════════════╝\n");
 
   // --- Uren: console.log er en sideeffekt ---

@@ -1,13 +1,13 @@
 export function run() {
   console.log("╔══════════════════════════════════════════╗");
-  console.log("║  Del 5: Refaktorert — ren processOrder  ║");
+  console.log("║  Del 5: Refaktorert — ren processOrder   ║");
   console.log("╚══════════════════════════════════════════╝\n");
 
   // --- REN kjerne: null IO, null mutasjon ---
   function calculateTotal(order, taxRate) {
     const subtotal = order.items.reduce(
       (sum, item) => sum + item.price * item.qty,
-      0
+      0,
     );
     return subtotal * (1 + taxRate);
   }

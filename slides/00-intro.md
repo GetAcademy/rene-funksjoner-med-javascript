@@ -45,7 +45,7 @@ Tre grunner:
 ## Setup
 
 ```bash
-cd ~/Projects/GET/csharp-fp-worklog
+cd ~/Projects/GET/rene-funksjoner-med-javascript
 node src/index.js
 ```
 

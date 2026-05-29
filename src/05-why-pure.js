@@ -1,6 +1,6 @@
 export function run() {
   console.log("╔══════════════════════════════════════════╗");
-  console.log("║  Del 4: Hvorfor rene funksjoner         ║");
+  console.log("║  Del 4: Hvorfor rene funksjoner          ║");
   console.log("╚══════════════════════════════════════════╝\n");
 
   function add(a, b) {
@@ -28,7 +28,9 @@ export function run() {
     for (const { a, b, expected } of tests) {
       const result = add(a, b);
       if (result !== expected) {
-        console.log(`  ❌ FAIL: add(${a}, ${b}) = ${result}, expected ${expected}`);
+        console.log(
+          `  ❌ FAIL: add(${a}, ${b}) = ${result}, expected ${expected}`,
+        );
         return;
       }
     }
@@ -40,6 +42,8 @@ export function run() {
   // --- 4C: Komponerbar ---
   console.log("4C — Komponerbar:");
   console.log(`  add(add(2, 3), 4) = ${add(add(2, 3), 4)}`);
-  console.log(`  [1,2,3].map(x => add(x, 10)) = [${[1, 2, 3].map((x) => add(x, 10))}]`);
+  console.log(
+    `  [1,2,3].map(x => add(x, 10)) = [${[1, 2, 3].map((x) => add(x, 10))}]`,
+  );
   console.log("  ✅ Små rene brikker → større logikk uten overraskelser\n");
 }
