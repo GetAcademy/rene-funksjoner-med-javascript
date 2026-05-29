@@ -1,13 +1,12 @@
-# Funksjonell programmering i C# — 20-minutters worklog
+# Rene funksjoner — 20-minutters worklog
 
-**Mål:** Forstå rene funksjoner, sideeffekter, immutability — og hvorfor
-funksjonell tenkning gjør koden lettere å teste, resonnere om og dele.
+**Mål:** Forstå hva en ren funksjon er, hva sideeffekter er, og hvordan du
+skiller beregning fra effekt for å få testbar, forutsigbar kode.
 
 ## Setup
 
 ```bash
-cd ~/Projects/GET/csharp-fp-worklog
-dotnet run
+node src/index.js
 ```
 
 Velg en del fra menyen. Les output og forstå *hvorfor* den ser ut som den gjør.
@@ -15,23 +14,23 @@ Velg en del fra menyen. Les output og forstå *hvorfor* den ser ut som den gjør
 ## Presentasjon med presenterm
 
 ```bash
-presenterm slides/deck.md   # hele presentasjonen
-presenterm slides/          # alle deler
+presenterm slides/deck.md
 ```
 
 ## Innhold
 
 | Del | Tema | Tid |
-|:---|:---|:---:|
-| 1 | Rene funksjoner vs sideeffekter | 5 min |
-| 2 | Immutability med objekter | 5 min |
-| 3 | Immutability med lister | 5 min |
-| 4 | Refaktorering: imperativ → funksjonell | 3 min |
-| | Oppsummering | 1 min |
+|:---|:---|---:|
+| 00 | Intro — hva/hvorfor/hvordan | 1 min |
+| 01 | Uren `processOrder` — test-problemet | 4 min |
+| 02 | Mini 1: IO som sideeffekt | 3 min |
+| 03 | Mini 2: Mutasjon global/referanse | 3 min |
+| 04 | Mini 3: Forutsigbarhet & testbarhet | 3 min |
+| 05 | Refaktorert `processOrder` — ren + test | 4 min |
+| | Oppsummering | 2 min |
 
 ## Filer
 
-- `src/Program.cs` — meny for å kjøre delene
-- `src/Part1_PureFunctions.cs` .. `src/Part4_Refactoring.cs` — eksempelkode
-- `src/Models.cs` — delte typer (`MutablePerson`, `ImmutablePerson`)
-- `slides/` — presenterm-klare slides med konsepter og kode
+- `src/index.js` — meny for å kjøre delene
+- `src/00-intro.js` .. `src/05-pure-order.js` — eksempelkode
+- `slides/` — presenterm-klare slides

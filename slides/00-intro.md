@@ -3,31 +3,42 @@ options:
   end_slide_shorthand: true
 ---
 
-# Funksjonell programmering i C#
+# Hva er en ren funksjon?
 
-20-minutters worklog
+To regler:
+
+1. **Samme output gitt samme input** — alltid
+2. **Ingen sideeffekter** — den påvirker ikke verden utenfor
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+```
+
+`add(2, 3)` → `5` hver eneste gang. Alltid.
 
 ---
 
-## Navigasjon i presenterm
+## Hvorfor bry seg?
 
-| Tast | Handling |
+Tre grunner:
+
+- **Testbar** — ingen setup, ingen mocking
+- **Forutsigbar** — du trenger ikke å vite hele programtilstanden
+- **Komponerbar** — små rene brikker kan settes sammen til større logikk
+
+> Rene funksjoner er *gratis* å forstå — du ser bare på parameterne.
+
+---
+
+## Hvordan — verktøy vi skal bruke
+
+| Verktøy | Problemet det løser |
 |:---|---|
-| `→` / `↓` / `j` / mellomrom | Neste slide |
-| `←` / `↑` / `k` | Forrige slide |
-| `g` | Første slide |
-| `G` | Siste slide |
-| `1`..`9` | Hopp til slide-nummer |
-| `q` / `Esc` | Avslutt |
-
----
-
-## Mål
-
-Forstå rene funksjoner, sideeffekter, immutability — og hvorfor
-funksjonell tenkning gjør koden lettere å teste, resonnere om og dele.
-
-Alt du trenger er terminalen og `dotnet`.
+| **Flytte IO** | console.log, filskriving, API-kall ut av funksjonen |
+| **Unngå global mutasjon** | `let` på toppnivå, delt tilstand |
+| **Kopier data** | Spread (`...`), `.map()`, `.filter()` istedenfor mutasjon |
 
 ---
 
@@ -35,21 +46,7 @@ Alt du trenger er terminalen og `dotnet`.
 
 ```bash
 cd ~/Projects/GET/csharp-fp-worklog
-dotnet run
+node src/index.js
 ```
 
-Velg en del fra menyen. Les output og forstå *hvorfor* den ser ut som den gjør.
-
-Åpne gjerne `src/`-filene side om side.
-
----
-
-## Disposisjon
-
-| Del | Tema | Tid |
-|:---|:---|:---:|
-| 1 | Rene funksjoner vs sideeffekter | 5 min |
-| 2 | Immutability med objekter | 5 min |
-| 3 | Immutability med lister | 5 min |
-| 4 | Refaktorering: imperativ → funksjonell | 3 min |
-| | Oppsummering | 1 min |
+Velg en del. Les output. Forstå *hvorfor*.
